@@ -4,3 +4,5 @@ This bot will be a moderation bot that will be focused on being **stable** rathe
 ### It will always be open source.
 
 - Suport Server: https://discord.gg/n5kUSmwUMw
+
+## The recommended platform to upload your bot is [Repl.it] (repl.it)
