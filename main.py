@@ -23,7 +23,7 @@ async def on_ready():  # When the bot is ready
 async def on_message(message):
   
     if message.content.startswith('gay'):
-        await message.channel.send(':point_up_2: :rainbow_flag: :flushed:')
+        await message.channel.send(':point_up_2: :rainbow_flag:')
 
 extensions = [
 	'cogs.cog_example'  # Same name as it would be if you were importing it
