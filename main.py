@@ -1,47 +1,38 @@
-#At the start we import the modules
-import discord #We import discord to make connection with discord API
-from discord.ext import commands #We import commands from discord.ext in order to define commands
+import os
+from keep_alive import keep_alive
+from discord.ext import commands
 
+client = commands.Bot(
+	command_prefix="z!",  # Change to desired prefix
+	case_insensitive=True  # Commands aren't case-sensitive
+)
 
-client = commands.Bot(command_prefix='!') #You can always change the ! to any prefix you want
-
-#Example commands
+client.author_id = 487258918465306634  # Change to your discord id!!!
 
 #Ping command
 @client.command()#You can added inside the () either "aliases=['Command Alias']" OR "help = 'Command Description'"
 async def ping(ctx):
     await ctx.send(f"Pong!\n{round(client.latency * 1000)}ms") #The "\n" is used to start another line
 
+@client.event 
+async def on_ready():  # When the bot is ready
+    print("Me prendi")
+    print(client.user)  # Prints the bot's username and identifier
 
-#Example events
-
-#on_ready event | This event is basically a function that gets triggered once the bot is online
 @client.event
-async def on_ready():
-    print("Bot is online!") #This prints "Bot is online!" in your terminal once the bot gets online
+async def on_message(message):
+  
+    if message.content.startswith('gay'):
+        await message.channel.send(':point_up_2: :rainbow_flag: :flushed:')
 
-#Moderation Commands:
+extensions = [
+	'cogs.cog_example'  # Same name as it would be if you were importing it
+]
 
+if __name__ == '__main__':  # Ensures this is the file being ran
+	for extension in extensions:
+		client.load_extension(extension)  # Loades every extension.
 
-@client.command() #Ban command
-async def ban(ctx, member : discord.Member, *, reason=None): #Reason = None because if there is no reason given it doesn't show an error
-    await member.ban(reason=reason)
-    await ctx.send(f"Banned {member.mention}")
-
-#Kick command is pretty much same as the ban command but here is the code:
-
-@client.command() #Kick command
-async def kick(ctx, member : discord.Member, *, reason=None):
-    await member.kick(reason=reason)
-    await ctx.send(f"Kicked {member.mention}")
-
-
-#Warn command is one of the easiest moderation commands you can do!
-
-@client.command() #Warn command
-async def warn(ctx, member : discord.Member, *, reason=None):
-    await member.send(f"You have been warned in {ctx.guild.name} for : {reason}")
-    await ctx.send(f"Warned {member.mention} for : {reason}")
-
-
-client.run('bot_token') #Replace "bot_token" with your bot's token
+keep_alive()  # Starts a webserver to be pinged.
+token = os.environ.get("DISCORD_BOT_SECRET") 
+client.run(token)  # Starts the bot
