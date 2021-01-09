@@ -1,38 +1,47 @@
 import os
 from keep_alive import keep_alive
 from discord.ext import commands
+import discord
 
-client = commands.Bot(
-	command_prefix="z!",  # Change to desired prefix
-	case_insensitive=True  # Commands aren't case-sensitive
-)
-
-client.author_id = 487258918465306634  # Change to your discord id!!!
-
-#Ping command
-@client.command()#You can added inside the () either "aliases=['Command Alias']" OR "help = 'Command Description'"
+client = commands.Bot(command_prefix='uwu ') 
+@client.command()
 async def ping(ctx):
-    await ctx.send(f"Pong!\n{round(client.latency * 1000)}ms") #The "\n" is used to start another line
+    await ctx.send(f"Pong!\n{round(client.latency * 1000)}ms") 
 
-@client.event 
-async def on_ready():  # When the bot is ready
-    print("Me prendi")
-    print(client.user)  # Prints the bot's username and identifier
 
 @client.event
-async def on_message(message):
-  
-    if message.content.startswith('gay'):
-        await message.channel.send(':point_up_2: :rainbow_flag:')
+async def on_ready():
+    print("Bot is on OwO!")
+
+
+@client.command() 
+async def ban(ctx, member : discord.Member, *, reason=None): 
+    await member.ban(reason=reason)
+    await ctx.send(f"Banned {member.mention}")
+
+
+
+@client.command() 
+async def kick(ctx, member : discord.Member, *, reason=None):
+    await member.kick(reason=reason)
+    await ctx.send(f"Kicked {member.mention}")
+
+
+
+@client.command() 
+async def warn(ctx, member : discord.Member, *, reason=None):
+    await member.send(f"You have been warned in {ctx.guild.name} for : {reason}")
+    await ctx.send(f"Warned {member.mention} for : {reason}")
+
 
 extensions = [
-	'cogs.cog_example'  # Same name as it would be if you were importing it
+	'cogs.cog_example' 
 ]
 
-if __name__ == '__main__':  # Ensures this is the file being ran
+if __name__ == '__main__':  
 	for extension in extensions:
-		client.load_extension(extension)  # Loades every extension.
+		client.load_extension(extension) 
 
-keep_alive()  # Starts a webserver to be pinged.
+keep_alive()  
 token = os.environ.get("DISCORD_BOT_SECRET") 
-client.run(token)  # Starts the bot
+client.run(token) 
