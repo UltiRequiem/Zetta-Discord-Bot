@@ -13,11 +13,6 @@ async def ping(ctx):
 async def on_ready():
     game = discord.Game('Killing Furrys')
     await client.change_presence(staimport os
-from keep_alive import keep_alive
-from discord.ext import commands
-import discord
-
-client = commands.Bot(command_prefix='uwu ')
 
 
 @client.command()
