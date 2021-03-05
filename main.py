@@ -12,7 +12,7 @@ async def ping(ctx):
 @client.event
 async def on_ready():
     game = discord.Game('Killing Furrys')
-    await client.change_presence(staimport os
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Zero Requiem"))
 
 
 @client.command()
