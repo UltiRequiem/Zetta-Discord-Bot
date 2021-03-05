@@ -17,8 +17,9 @@ async def ping(ctx):
     await ctx.send(f"Pong!\n{round(bot.latency * 1000)}ms") 
 
 @bot.command()
-async def owo(owo_mesagge):
-    await owo_mesagge.send('O//w//O')
+async def repeat(ctx, times: int, content: str):
+    for i in range(times):
+        await ctx.send(content)
 
 #------------Math Utilities---------------------
 
