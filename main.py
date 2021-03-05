@@ -20,7 +20,7 @@ async def ping(ctx):
 async def owo(owo_mesagge):
     await owo_mesagge.send('O//w//O')
 
-#------------Utilities---------------------
+#------------Math Utilities---------------------
 
 @bot.command()
 async def sum(ctx, num_one: int, num_two: int):
@@ -45,6 +45,17 @@ async def on_ready():  # When the bot is ready
     print("Siempre te estoy viendo, Zero >.<")
     print(bot.user)  # Yuno 5100    
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Zero Requiem"))
+
+@bot.event
+async def on_message(message):
+    if message.content.startswith('hello'):
+        await message.channel.send('Hello!')
+
+    if message.content.startswith('gay'):
+        await message.channel.send(':point_up_2: :rainbow_flag:')
+
+    if message.content.startswith('Loli'):
+        await message.channel.send("What's up?")
 
 extensions = [
 	'cogs.cog_example' 
