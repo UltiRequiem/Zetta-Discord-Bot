@@ -66,18 +66,6 @@ async def on_ready():
     print(bot.user)  
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Zero Requiem"))
 
-'''
-@bot.event
-async def on_message(message):
-    if message.content.startswith('hello'):
-        await message.channel.send('Hello!')
-
-    if message.content.startswith('gay'):
-        await message.channel.send(':point_up_2: :rainbow_flag:')
-
-    if message.content.startswith('Loli'):
-        await message.channel.send("What's up?")
-'''
 
 extensions = [
 	'cogs.cog_example' 
