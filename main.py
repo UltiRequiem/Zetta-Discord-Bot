@@ -58,9 +58,9 @@ async def warn(ctx, member: discord.Member, *, reason=None):
 
 #------------Events---------------------
 @bot.event 
-async def on_ready():  # When the bot is ready
-    print("Siempre te estoy viendo, Zero >.<")
-    print(bot.user)  # Yuno 5100    
+async def on_ready():  
+    print("I'm in.")
+    print(bot.user)  
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Zero Requiem"))
 
 @bot.event
