@@ -42,6 +42,12 @@
 Zetta is a small Discord bot in constant development.
 The bot is officially running on [Repl.it](https://repl.it)
 
+
+[Installation](#installation) is very easy, and you don't need to know anything about coding.Aside
+from installing and updating, every part of the bot can be controlled from within Discord.
+
+# Installation
+
 # Community
 **Zetta** is in continuous development, and it’s supported by an active little community which produces new content cogs for everyone to enjoy.
 New features are constantly added.
