@@ -23,20 +23,18 @@ async def owo(owo_mesagge):
 #------------Math Utilities---------------------
 
 @bot.command()
-async def sum(ctx, num_one: int, num_two: int):
-    await ctx.send(num_one + num_two)
-
-@bot.command()
-async def res(ctx, num_one: int, num_two: int):
-    await ctx.send(num_one - num_two)
-
-@bot.command()
-async def mul(ctx, num_one: int, num_two: int):
-    await ctx.send(num_one * num_two)
-
-@bot.command()
-async def div(ctx, num_one: int, num_two: int):
-    await ctx.send(num_one / num_two)
+async def calcula(ctx, num_one: int,simbol:str, num_two: int):
+      if simbol == '+':
+        await ctx.send(num_one + num_two)
+      elif simbol == '-':
+        await ctx.send(num_one - num_two)
+      elif simbol == '/':
+        await ctx.send(num_one / num_two)
+      elif simbol == '*':
+        await ctx.send(num_one * num_two)
+      else:
+        await ctx.send('Uhhh.')
+	
 #------------Mod Utilities---------------------
 
 @bot.command()
