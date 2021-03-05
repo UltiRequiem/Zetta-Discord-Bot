@@ -4,7 +4,7 @@ from keep_alive import keep_alive
 from discord.ext import commands
 
 bot = commands.Bot(
-	command_prefix="uwu ", 
+	command_prefix="z! ", 
 	case_insensitive=True  
 )
 
