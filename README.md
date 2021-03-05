@@ -30,3 +30,18 @@
   
 </p>
 
+<p align="center">
+  <a href="#overview">Overview</a>
+  •
+  <a href="#community">Community</a>
+  •
+  <a href="#license">License</a>
+</p>
+
+# Overview
+
+# Community
+
+# License
+
+Released under the [MIT](./LICENSE) license.
