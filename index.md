@@ -58,6 +58,8 @@ https://Zetta-Bot.ultirequiem.repl.co
 If after reading the guide you are still experiencing issues, feel free to join the
 [Official Discord Server](https://discord.gg/bMUT8bhBCz) and ask in the **#support** channel for help.
 
+If you don't want to do all that and you just want the bot on your server you can use this [invite](https://gg.gg/zetta).
+
 # Community
 **Zetta** is in continuous development, and it’s supported by an active little community which produces new content cogs for everyone to enjoy.
 New features are constantly added.
