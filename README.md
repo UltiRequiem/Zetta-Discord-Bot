@@ -39,9 +39,13 @@
 </p>
 
 # Overview
+Zetta is a small Discord bot in constant development.
+The bot is officially running on [Repl.it](https://repl.it)
 
 # Community
+**Zetta** is in continuous development, and it’s supported by an active little community which produces new content cogs for everyone to enjoy.
+New features are constantly added.
+Join us on our [Official Discord Server](https://discord.gg/bMUT8bhBCz)!
 
 # License
-
 Released under the [MIT](./LICENSE) license.
