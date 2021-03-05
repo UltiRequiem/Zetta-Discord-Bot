@@ -47,6 +47,16 @@ The bot is officially running on [Repl.it](https://repl.it)
 from installing and updating, every part of the bot can be controlled from within Discord.
 
 # Installation
+The easiest and free way to run the bot is at [Repl.it](https://repl.it).If you don't have an account yet, creating one is very simple, you can enter with Github.
+After creating your account make a fork of this [repl](https://repl.it/@UltiRequiem/Zetta-Bot).
+Then you hit the run button,and on the left side of the screen shows a url.
+
+You must create an account and in [Uptime Robot](https://uptimerobot.com) and add a monitor with the url that your reply shows you. Example of url:
+```
+https://Zetta-Bot.ultirequiem.repl.co
+```
+If after reading the guide you are still experiencing issues, feel free to join the
+[Official Discord Server](https://discord.gg/bMUT8bhBCz) and ask in the **#support** channel for help.
 
 # Community
 **Zetta** is in continuous development, and it’s supported by an active little community which produces new content cogs for everyone to enjoy.
