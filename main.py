@@ -4,7 +4,7 @@ from keep_alive import keep_alive
 from discord.ext import commands
 
 bot = commands.Bot(
-	command_prefix="z! ", 
+	command_prefix="z!", 
 	case_insensitive=True  
 )
 
@@ -20,6 +20,10 @@ async def ping(ctx):
 async def repeat(ctx, times: int, content: str):
     for i in range(times):
         await ctx.send(content)
+
+@bot.command()
+async def message(ctx, member: discord.Member, *, content):
+    await member.send(content)
 
 #------------Math Utilities---------------------
 
@@ -62,6 +66,7 @@ async def on_ready():
     print(bot.user)  
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Zero Requiem"))
 
+'''
 @bot.event
 async def on_message(message):
     if message.content.startswith('hello'):
@@ -72,6 +77,7 @@ async def on_message(message):
 
     if message.content.startswith('Loli'):
         await message.channel.send("What's up?")
+'''
 
 extensions = [
 	'cogs.cog_example' 
