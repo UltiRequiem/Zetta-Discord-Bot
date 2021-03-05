@@ -4,7 +4,7 @@ from keep_alive import keep_alive
 from discord.ext import commands
 
 bot = commands.Bot(
-	command_prefix="yuno ", 
+	command_prefix="uwu ", 
 	case_insensitive=True  
 )
 
@@ -37,7 +37,24 @@ async def mul(ctx, num_one: int, num_two: int):
 @bot.command()
 async def div(ctx, num_one: int, num_two: int):
     await ctx.send(num_one / num_two)
+#------------Mod Utilities---------------------
 
+@bot.command()
+async def ban(ctx, member: discord.Member, *, reason=None):
+    await member.ban(reason=reason)
+    await ctx.send(f"Banned {member.mention}")
+
+
+@bot.command()
+async def kick(ctx, member: discord.Member, *, reason=None):
+    await member.kick(reason=reason)
+    await ctx.send(f"Kicked {member.mention}")
+
+
+@bot.command()
+async def warn(ctx, member: discord.Member, *, reason=None):
+    await member.send(f"You have been warned in {ctx.guild.name} for : {reason}")
+    await ctx.send(f"Warned {member.mention} for : {reason}")
 
 #------------Events---------------------
 @bot.event 
