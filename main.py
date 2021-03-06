@@ -61,7 +61,7 @@ async def info(ctx):
 
 
 @bot.command()
-async def calcula(ctx, num_one: int, simbol: str, num_two: int):
+async def calculate(ctx, num_one: int, simbol: str, num_two: int):
     if simbol == '+':
         await ctx.send(num_one + num_two)
     elif simbol == '-':
