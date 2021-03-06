@@ -1,5 +1,5 @@
 import discord
-from asyncio import *
+import asyncio
 import random
 import youtube_dl
 import string
@@ -10,7 +10,7 @@ from discord.ext.commands import command
 
 # import pymongo
 # NOTE: Import pymongo if you are using the database function commands
-# NOTE: Also add `pymongo` and `dnspython` inside the requirements.txt file if you are using pymongo
+# NOTE: Also add `pymongo` and `dnspython` inside the requirements.txt file if you are using 
 
 # TODO: CREATE PLAYLIST SUPPORT FOR MUSIC
 
