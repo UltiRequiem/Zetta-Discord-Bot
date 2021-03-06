@@ -1,6 +1,10 @@
+# -*- coding: utf-8 -*-
+
 import os
 import datetime
 import discord
+import asyncio
+import youtube_dl
 from keep_alive import keep_alive
 from discord.ext import commands
 
@@ -20,7 +24,7 @@ async def ping(ctx):
 
 
 @bot.command()
-async def repeat(ctx, times: int, content: str):
+async def repeatm(ctx, times: int, content: str):
     for i in range(times):
         await ctx.send(content)
 
@@ -111,7 +115,7 @@ async def on_message(message):
 '''
 
 
-extensions = ['cogs.cog_example']
+extensions = ['cogs.cog_example','music']
 
 # ---------- Load Extensions ------------------------------
 if __name__ == '__main__':  # Ensures this is the file being ran
