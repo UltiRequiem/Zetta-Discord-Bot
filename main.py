@@ -1,4 +1,5 @@
 import os
+import datetime
 import discord
 from keep_alive import keep_alive
 from discord.ext import commands
@@ -24,6 +25,17 @@ async def repeat(ctx, times: int, content: str):
 @bot.command()
 async def message(ctx, member: discord.Member, *, content):
     await member.send(content)
+
+@bot.command()
+async def info(ctx):
+    embed = discord.Embed(title=f"{ctx.guild.name}", description="Server data:", timestamp=datetime.datetime.utcnow(), color=discord.Color.red())
+    embed.add_field(name="Server created at:", value=f"{ctx.guild.created_at}")
+    embed.add_field(name="Server Owner:", value=f"{ctx.guild.owner}")
+    embed.add_field(name="Server Region:", value=f"{ctx.guild.region}".capitalize())
+    embed.add_field(name="Server ID:", value=f"{ctx.guild.id}")
+    embed.set_thumbnail(url=f"{ctx.guild.icon_url}")
+
+    await ctx.send(embed=embed)
 
 #------------Math Utilities---------------------
 
@@ -65,7 +77,6 @@ async def on_ready():
     print("I'm in.")
     print(bot.user)  
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="Zero Requiem"))
-
 
 extensions = [
 	'cogs.cog_example' 
