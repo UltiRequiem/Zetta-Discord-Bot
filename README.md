@@ -1,10 +1,4 @@
-<h1 align="center">
-  <br>
-  <a href="https://github.com/UltiRequiem/Zetta-Discord-Bot"><img src="https://user-images.githubusercontent.com/71897736/110134281-35be5100-7d9b-11eb-9290-983df90e7dec.jpg" alt="Zetta Bot"></a>
-  <br>
-  Zetta Discord Bot
-  <br>
-</h1>
+<h1 align="center"> Zetta Discord Bot</h1>
 
 <h4 align="center">A cool Bot</h4>
 
@@ -29,7 +23,10 @@
   </a>
   
 </p>
-
+  <br>
+ 
+ <a href="https://github.com/UltiRequiem/Zetta-Discord-Bot"><img src="https://user-images.githubusercontent.com/71897736/110134281-35be5100-7d9b-11eb-9290-983df90e7dec.jpg" alt="Zetta Bot"></a>
+  
 <p align="center">
   <a href="#overview">Overview</a>
   •
