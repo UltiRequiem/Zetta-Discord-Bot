@@ -4,6 +4,9 @@ import discord
 from keep_alive import keep_alive
 from discord.ext import commands
 
+from urllib import parse, request
+import re
+
 bot = commands.Bot(command_prefix="z!", case_insensitive=True)
 
 bot.author_id = 413720448627638274  # Change to your discord id!!!
@@ -26,6 +29,13 @@ async def repeat(ctx, times: int, content: str):
 async def message(ctx, member: discord.Member, *, content):
     await member.send(content)
 
+@bot.command()
+async def youtube(ctx, *, search):
+    query_string = parse.urlencode({'search_query': search})
+    html_content = request.urlopen('http://www.youtube.com/results?' + query_string)
+    search_results = re.findall(r"watch\?v=(\S{11})", html_content.read().decode())
+    # print(search_results) // No Thanks
+    await ctx.send('https://www.youtube.com/watch?v=' + search_results[0])
 
 @bot.command()
 async def info(ctx):
@@ -89,6 +99,16 @@ async def on_ready():
     print(bot.user)
     await bot.change_presence(activity=discord.Activity(
         type=discord.ActivityType.watching, name="Zero Requiem"))
+
+
+# TODO Fix this:
+'''
+@bot.listen()
+async def on_message(message):
+    if "zero" in message.content.lower():
+        await message.channel.send('Zero Requiem')
+        await bot.process_commands(message)
+'''
 
 
 extensions = ['cogs.cog_example']
